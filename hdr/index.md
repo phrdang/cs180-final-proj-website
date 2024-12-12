@@ -76,17 +76,18 @@ Next we can convert the radiance map to an HDR image using various tone mapping 
     4. `dR = 5`
     5. `gamma = 0.6` for gamma compression
 
-Here are our results:
+Here are our results. Note that the Detail Layer (Binarized) is an intermediate output of Durand. To display the details more easily, we binarized the detail layer array such that all values > 0.1 are set to 1, and all other values are set to 0.
 
-| Global Scale | Global Simple | Durand |
-| :--- | :--- | :--- |
-| ![global scale arch](assets/2/arch/global_scale.jpg) | ![global simple arch](assets/2/arch/global_simple.jpg) | ![Durand arch](assets/2/arch/durand.jpg) |
-| ![global scale bonsai](assets/2/bonsai/global_scale.jpg) | ![global simple bonsai](assets/2/bonsai/global_simple.jpg) | ![Durand bonsai](assets/2/bonsai/durand.jpg) |
-| ![global scale chapel](assets/2/chapel/global_scale.jpg) | ![global simple chapel](assets/2/chapel/global_simple.jpg) | ![Durand chapel](assets/2/chapel/durand.jpg) |
-| ![global scale garage](assets/2/garage/global_scale.jpg) | ![global simple garage](assets/2/garage/global_simple.jpg) | ![Durand garage](assets/2/garage/durand.jpg) |
-| ![global scale garden](assets/2/garden/global_scale.jpg) | ![global simple garden](assets/2/garden/global_simple.jpg) | ![Durand garden](assets/2/garden/durand.jpg) |
-| ![global scale house](assets/2/house/global_scale.jpg) | ![global simple house](assets/2/house/global_simple.jpg) | ![Durand house](assets/2/house/durand.jpg) |
-| ![global scale mug](assets/2/mug/global_scale.jpg) | ![global simple mug](assets/2/mug/global_simple.jpg) | ![Durand mug](assets/2/mug/durand.jpg) |
+| Global Scale | Global Simple | Detail Layer (Binarized) | Durand |
+| :--- | :--- | :--- | :--- |
+| ![global scale arch](assets/2/arch/global_scale.jpg) | ![global simple arch](assets/2/arch/global_simple.jpg) | ![detail layer arch](assets/2/arch/detail_layer.jpg) | ![Durand arch](assets/2/arch/durand.jpg) |
+| ![global scale bonsai](assets/2/bonsai/global_scale.jpg) | ![global simple bonsai](assets/2/bonsai/global_simple.jpg) | ![detail layer bonsai](assets/2/bonsai/detail_layer.jpg) | ![Durand bonsai](assets/2/bonsai/durand.jpg) |
+| ![global scale chapel](assets/2/chapel/global_scale.jpg) | ![global simple chapel](assets/2/chapel/global_simple.jpg) | ![detail layer chapel](assets/2/chapel/detail_layer.jpg) | ![Durand chapel](assets/2/chapel/durand.jpg) |
+| ![global scale garage](assets/2/garage/global_scale.jpg) | ![global simple garage](assets/2/garage/global_simple.jpg) | ![detail layer garage](assets/2/garage/detail_layer.jpg) | ![Durand garage](assets/2/garage/durand.jpg) |
+| ![global scale garden](assets/2/garden/global_scale.jpg) | ![global simple garden](assets/2/garden/global_simple.jpg) | ![detail layer garden](assets/2/garden/detail_layer.jpg) | ![Durand garden](assets/2/garden/durand.jpg) |
+| ![global scale house](assets/2/house/global_scale.jpg) | ![global simple house](assets/2/house/global_simple.jpg) | ![detail layer house](assets/2/house/detail_layer.jpg) | ![Durand house](assets/2/house/durand.jpg) |
+| ![global scale mug](assets/2/mug/global_scale.jpg) | ![global simple mug](assets/2/mug/global_simple.jpg) | ![detail layer mug](assets/2/mug/detail_layer.jpg) | ![Durand mug](assets/2/mug/durand.jpg) |
+
 
 ## Bells & Whistles
 
@@ -129,10 +130,10 @@ Here are the radiance maps:
 
 Here are the tone mapping results, which are less blurry:
 
-| Global Scale | Global Simple | Durand |
-| :--- | :--- | :--- |
-| ![global scale aligned garden](assets/2/aligned/garden/global_scale.jpg) | ![global simple aligned garden](assets/2/aligned/garden/global_simple.jpg) | ![Durand aligned garden](assets/2/aligned/garden/durand.jpg) |
-| ![global scale aligned house](assets/2/aligned/house/global_scale.jpg) | ![global simple aligned house](assets/2/aligned/house/global_simple.jpg) | ![Durand aligned house](assets/2/aligned/house/durand.jpg) |
+| Global Scale | Global Simple | Detail Layer (Binarized) | Durand |
+| :--- | :--- | :--- | :--- |
+| ![global scale aligned garden](assets/2/aligned/garden/global_scale.jpg) | ![global simple aligned garden](assets/2/aligned/garden/global_simple.jpg) | ![detail layer aligned garden](assets/2/aligned/garden/detail_layer.jpg) | ![Durand aligned garden](assets/2/aligned/garden/durand.jpg) |
+| ![global scale aligned house](assets/2/aligned/house/global_scale.jpg) | ![global simple aligned house](assets/2/aligned/house/global_simple.jpg) | ![detail layer aligned house](assets/2/aligned/house/detail_layer.jpg) | ![Durand aligned house](assets/2/aligned/house/durand.jpg) |
 
 ### Taking Our Own Photos
 
@@ -158,8 +159,8 @@ Here are the radiance maps:
 
 Here are the tone mapping results:
 
-| Global Scale | Global Simple | Durand |
-| :--- | :--- | :--- |
-| ![global scale cory](assets/2/aligned/our-photos/cory/global_scale.jpg) | ![global simple cory](assets/2/aligned/our-photos/cory/global_simple.jpg) | ![Durand aligned cory](assets/2/aligned/our-photos/cory/durand.jpg) |
-| ![global scale trees](assets/2/aligned/our-photos/trees/global_scale.jpg) | ![global simple trees](assets/2/aligned/our-photos/trees/global_simple.jpg) | ![Durand aligned trees](assets/2/aligned/our-photos/trees/durand.jpg) |
-| ![global scale vines](assets/2/aligned/our-photos/vines/global_scale.jpg) | ![global simple vines](assets/2/aligned/our-photos/vines/global_simple.jpg) | ![Durand aligned vines](assets/2/aligned/our-photos/vines/durand.jpg) |
+| Global Scale | Global Simple | Detail Layer (Binarized) | Durand |
+| :--- | :--- | :--- | :--- |
+| ![global scale cory](assets/2/aligned/our-photos/cory/global_scale.jpg) | ![global simple cory](assets/2/aligned/our-photos/cory/global_simple.jpg) | ![detail layer cory](assets/2/aligned/our-photos/cory/detail_layer.jpg) | ![Durand aligned cory](assets/2/aligned/our-photos/cory/durand.jpg) |
+| ![global scale trees](assets/2/aligned/our-photos/trees/global_scale.jpg) | ![global simple trees](assets/2/aligned/our-photos/trees/global_simple.jpg) | ![detail layer trees](assets/2/aligned/our-photos/trees/detail_layer.jpg) | ![Durand aligned trees](assets/2/aligned/our-photos/trees/durand.jpg) |
+| ![global scale vines](assets/2/aligned/our-photos/vines/global_scale.jpg) | ![global simple vines](assets/2/aligned/our-photos/vines/global_simple.jpg) | ![detail layer vines](assets/2/aligned/our-photos/vines/detail_layer.jpg) | ![Durand aligned vines](assets/2/aligned/our-photos/vines/durand.jpg) |
