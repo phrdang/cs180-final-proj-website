@@ -40,6 +40,57 @@ $$\begin{aligned} A(e, \text{im_to_var}(y + 1, x)) &= 1 \\ A(e, \text{im_to_var}
 
 ## Poisson Blending
 
+We adapt our image reconstruction process to implement Poisson blending. Given a target image $$t$$ and source image $$s$$, pixels are selected from a source region $$S$$ in $$s$$ and seamlessly incorporated with the pixels in $$t$$ to create the new image $$v$$. These values are incorporated and blended together by solving the following optimization problem:
+
+$$\min_v \sum_{i \in S, j \in N_i \cap S} (v_i - v_j - (s_i - s_j))^2 + \sum_{i \in S, j \in N_i \cap \bar{S}} (v_i -
+t_j - (s_i - s_j))^2$$
+- $$s = $$ source image
+- $$t = $$ target image
+- $$v = $$ new blended image
+- $$S = $$ source region
+- $$\bar{S} = $$ area outside $$S$$
+- $$i = $$ pixel in $$S$$
+- $$j = $$ 4-neighbor of $$i$$ (top, bottom, left, right) which is calculated by adding $$(dy, dx)$$ to $$s_i = (x, y)$$
+
+First, $$s$$ is created by taking an image and transforming it so that the scene component to be integrated into $$t$$ is aligned and scaled to the correct size. In addition, we applied a binary mask to define the boundaries of $$S$$. This was all done using the software Krita. 
+
+| Original source image $$s$$         | Target image $$t$$                    | Transformed $$s$$                             | Mask                               |
+|:------------------------------------|:--------------------------------------|:----------------------------------------------|:-----------------------------------|
+| ![Source image](assets/penguin.jpg) | ![Target image](assets/im2_small.jpg) | ![Transformed s](assets/penguin_source_v.jpg) | ![mask](assets/penguin_mask_v.jpg) |
+
+As with the toy problem, the objective function is formulated as a least squares problem to solve for $$v = \arg\min_v \lVert A \vec{v} - \vec{b} \rVert ^2$$.
+
+Each value of $$v_i$$ is computed depending on whether the neighbor of $$s_i$$ is in $$S$$ or $$\bar{S}$$ by creating $$A$$ and $$\vec{b}$$ as follows:
+
+If $$s_j \in S$$:
+
+$$\begin{aligned} A(e, \text{im_to_var}(y, x)) &= 1 \\ A(e, \text{im_to_var}(y + dy, x + dx)) &= -1 \\ b(e) &= s(y, x) - s(y + dy, x + dx)\end{aligned}$$
+
+If $$s_j \in \bar{S}$$:
+
+$$\begin{aligned} A(e, \text{im_to_var}(y, x)) &= 1 \\ b(e) &= t(y + dy, x + dx) + s(y, x) - s(y + dy, x + dx)\end{aligned}$$
+
+Hikers & Penguin
+
+| penguin                             | hikers                                | mask                                        | Poisson blended image $$v$$            |
+|:------------------------------------|:--------------------------------------|:--------------------------------------------|:---------------------------------------|
+| ![Source image](assets/penguin.jpg) | ![Target image](assets/im2_small.jpg) | ![Transformed s](assets/penguin_mask_v.jpg) | ![mask](assets/out_penguin_hikers.png) |
+
+Botticelli's _Primavera_ & Elana's self-portrait
+
+| Botticelli's _Primavera_                    | Elana's self-portrait                             | mask                                         | Poisson blended image $$v$$       |
+|:--------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:----------------------------------|
+| ![Source image](assets/primavera_small.jpg) | ![Target image](assets/elana_pensive_drawing.jpg) | ![Transformed s](assets/primavera_mask2.jpg) | ![mask](assets/out_primavera.png) |
+
+Sharks & Swimmer
+
+| sharks                                      | Elana's self-portrait                             | mask                                         | Poisson blended image $$v$$       |
+|:--------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:----------------------------------|
+| ![Source image](assets/primavera_small.jpg) | ![Target image](assets/elana_pensive_drawing.jpg) | ![Transformed s](assets/primavera_mask2.jpg) | ![mask](assets/out_primavera.png) |
+
+
+
+
 ## Bells & Whistles
 
 ### Mixed Gradients
