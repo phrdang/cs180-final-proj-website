@@ -15,3 +15,5 @@
 ## Bells & Whistles
 
 ### Mixed Gradients
+
+[Back to home page](../index.md)

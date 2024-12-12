@@ -164,3 +164,5 @@ Here are the tone mapping results:
 | ![global scale cory](assets/2/aligned/our-photos/cory/global_scale.jpg) | ![global simple cory](assets/2/aligned/our-photos/cory/global_simple.jpg) | ![detail layer cory](assets/2/aligned/our-photos/cory/detail_layer.jpg) | ![Durand aligned cory](assets/2/aligned/our-photos/cory/durand.jpg) |
 | ![global scale trees](assets/2/aligned/our-photos/trees/global_scale.jpg) | ![global simple trees](assets/2/aligned/our-photos/trees/global_simple.jpg) | ![detail layer trees](assets/2/aligned/our-photos/trees/detail_layer.jpg) | ![Durand aligned trees](assets/2/aligned/our-photos/trees/durand.jpg) |
 | ![global scale vines](assets/2/aligned/our-photos/vines/global_scale.jpg) | ![global simple vines](assets/2/aligned/our-photos/vines/global_simple.jpg) | ![detail layer vines](assets/2/aligned/our-photos/vines/detail_layer.jpg) | ![Durand aligned vines](assets/2/aligned/our-photos/vines/durand.jpg) |
+
+[Back to home page](../index.md)

@@ -54,3 +54,5 @@ Here is a gif of the results across all apertures:
 ## Summary
 
 It's really cool how you can simulate different camera parameters such as depth and aperture just by taking a set of images of the same scene. In this project, we learned that you can think of depth essentially as shifting images using a certain scale factor, and how you can think of aperture essentially as sampling more or less versions of the image to simulate taking in more or less light.
+
+[Back to home page](../index.md)
