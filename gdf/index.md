@@ -72,24 +72,45 @@ $$\begin{aligned} A(e, \text{im_to_var}(y, x)) &= 1 \\ b(e) &= t(y + dy, x + dx)
 
 Hikers & Penguin
 
-| penguin                             | hikers                                | mask                                        | Poisson blended image $$v$$            |
-|:------------------------------------|:--------------------------------------|:--------------------------------------------|:---------------------------------------|
-| ![Source image](assets/penguin.jpg) | ![Target image](assets/im2_small.jpg) | ![Transformed s](assets/penguin_mask_v.jpg) | ![mask](assets/out_penguin_hikers.png) |
+| penguin                             | hikers                                | mask                                        | Poisson blended image $$v$$                       |
+|:------------------------------------|:--------------------------------------|:--------------------------------------------|:--------------------------------------------------|
+| ![Source image](assets/penguin.jpg) | ![Target image](assets/im2_small.jpg) | ![Transformed s](assets/penguin_mask_v.jpg) | ![poisson blended](assets/out_penguin_hikers.png) |
 
 Botticelli's _Primavera_ & Elana's self-portrait
 
-| Botticelli's _Primavera_                    | Elana's self-portrait                             | mask                                         | Poisson blended image $$v$$       |
-|:--------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:----------------------------------|
-| ![Source image](assets/primavera_small.jpg) | ![Target image](assets/elana_pensive_drawing.jpg) | ![Transformed s](assets/primavera_mask2.jpg) | ![mask](assets/out_primavera.png) |
+| Botticelli's _Primavera_                    | Elana's self-portrait                             | mask                                         | Poisson blended image $$v$$                  |
+|:--------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:---------------------------------------------|
+| ![Source image](assets/primavera_small.jpg) | ![Target image](assets/elana_pensive_drawing.jpg) | ![Transformed s](assets/primavera_mask2.jpg) | ![poisson blended](assets/out_primavera.png) |
 
 Sharks & Swimmer
 
-| sharks                                      | Elana's self-portrait                             | mask                                         | Poisson blended image $$v$$       |
-|:--------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:----------------------------------|
-| ![Source image](assets/primavera_small.jpg) | ![Target image](assets/elana_pensive_drawing.jpg) | ![Transformed s](assets/primavera_mask2.jpg) | ![mask](assets/out_primavera.png) |
+| sharks                             | swimming child                            | mask                                            | Poisson blended image $$v$$                       |
+|:-----------------------------------|:------------------------------------------|:------------------------------------------------|:--------------------------------------------------|
+| ![Source image](assets/sharks.jpg) | ![Target image](assets/girl_swimming.jpg) | ![Transformed s](assets/girl_swimming_mask.jpg) | ![poisson blended](assets/out_sharks_swimmer.png) |
 
+Lunazilla
 
+| Luna                                   | city                             | mask                                          | Poisson blended image $$v$$                         |
+|:---------------------------------------|:---------------------------------|:----------------------------------------------|:----------------------------------------------------|
+| ![Source image](assets/luna_night.jpg) | ![Target image](assets/city.jpg) | ![Transformed s](assets/luna_night_mask2.jpg) | ![poisson blended](assets/out_luna_night_city2.png) |
 
+### Comparison with Laplacian blending
+
+Botticelli's _Primavera_ & Elana's self-portrait
+
+| Poisson blended image                        | Laplacian blended image                                                  |
+|:---------------------------------------------|:-------------------------------------------------------------------------|
+| ![poisson blended](assets/out_primavera.png) | ![laplacian blended](assets/out_elana_pensive_small2primavera_small.jpg) |
+
+In this case, it is advantageous to use Poisson blending over Laplacian blending to match the overall color palette of the blended component to the background. With Laplacian blending, the preservation of pixel intensities results in a rough graft onto the target image. 
+
+Lunazilla
+
+| Poisson blended image                               | Laplacian blended image                              |
+|:----------------------------------------------------|:-----------------------------------------------------|
+| ![poisson blended](assets/out_luna_night_city2.png) | ![laplacian blended](assets/out_luna_nightcity2.jpg) |
+
+On the other hand, Laplacian blending has its merits in avoiding unwanted color changes. Here, using Poisson blending caused an odd green stain on Luna, while this did not occur with Laplacian blending. In this case in particular, the rough boundaries around Luna in addition to the bright flash in the original image contribute to the charm of the blended result. Stylistically, the image of giant cat in the city is not meant to look smooth and natural. Laplacian blending achieves a roughly cut-and-pasted effect that enhances the chaos wreaked in the city by a gamboling Lunazilla.     
 
 ## Bells & Whistles
 
