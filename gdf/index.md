@@ -120,7 +120,7 @@ Lunazilla
 |:----------------------------------------------------|:-----------------------------------------------------|
 | ![poisson blended](assets/out_luna_night_city2.png) | ![laplacian blended](assets/out_luna_nightcity2.jpg) |
 
-On the other hand, Laplacian blending has its merits in avoiding unwanted color changes. Here, using Poisson blending caused an odd green stain on Luna, while this did not occur with Laplacian blending. In this case in particular, the rough boundaries around Luna in addition to the bright flash in the original image contribute to the charm of the blended result. Stylistically, the image of giant cat in the city is not meant to look smooth and natural. Laplacian blending achieves a roughly cut-and-pasted effect that enhances the chaos wreaked in the city by a gamboling Lunazilla.     
+Laplacian blending has its merits in avoiding unwanted color changes. Here, using Poisson blending caused an odd green stain on Luna, while this did not occur with Laplacian blending. In this case in particular, the rough boundaries around Luna in addition to the bright flash in the original image contribute to the charm of the blended result. Stylistically, the image of giant cat in the city is not meant to look smooth and natural. Laplacian blending achieves a roughly cut-and-pasted effect that enhances the chaos wreaked in the city by a gamboling Lunazilla.     
 
 ## Bells & Whistles
 
