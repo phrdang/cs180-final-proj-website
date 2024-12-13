@@ -112,7 +112,7 @@ Botticelli's _Primavera_ & Elana's self-portrait
 |:---------------------------------------------|:-------------------------------------------------------------------------|
 | ![poisson blended](assets/out_primavera.png) | ![laplacian blended](assets/out_elana_pensive_small2primavera_small.jpg) |
 
-In this case, it is advantageous to use Poisson blending over Laplacian blending to match the overall color palette of the blended component to the background. With Laplacian blending, the preservation of pixel intensities results in a rough graft onto the target image. 
+In this case, it is advantageous to use Poisson blending over Laplacian blending to match the overall color palette of the blended component to the background. On the other hand with Laplacian blending, the preservation of pixel intensities results in a rough graft onto the target image. 
 
 Lunazilla
 
